@@ -1,0 +1,5 @@
+version: "Apple Swift version 3.0 (swiftlang-800.0.46.2 clang-800.0.38)"
+options: "53d14e7ed118148b63922710257f8bff"
+build_time: [527965927, 900975000]
+inputs:
+  "/Users/josh/iOS/swift-cli-alamofire/Packages/Just-0.5.3/Sources/Just/Just.swift": [527965925, 0]

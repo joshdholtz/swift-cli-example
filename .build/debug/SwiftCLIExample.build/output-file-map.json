@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/Users/josh/iOS/swift-cli-alamofire/.build/debug/SwiftCLIExample.build/master.swiftdeps"
+  },
+  "/Users/josh/iOS/swift-cli-alamofire/Sources/main.swift": {
+    "dependencies": "/Users/josh/iOS/swift-cli-alamofire/.build/debug/SwiftCLIExample.build/main.d",
+    "object": "/Users/josh/iOS/swift-cli-alamofire/.build/debug/SwiftCLIExample.build/main.swift.o",
+    "swiftmodule": "/Users/josh/iOS/swift-cli-alamofire/.build/debug/SwiftCLIExample.build/main~partial.swiftmodule",
+    "swift-dependencies": "/Users/josh/iOS/swift-cli-alamofire/.build/debug/SwiftCLIExample.build/main.swiftdeps"
+  }
+}

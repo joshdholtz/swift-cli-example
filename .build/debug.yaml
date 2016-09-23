@@ -1,0 +1,47 @@
+client:
+  name: swift-build
+tools: {}
+targets:
+  "test": ["<Just.module>","<SwiftCLIExample.module>","<SwiftCLIExample.exe>"]
+  "main": ["<Just.module>","<SwiftCLIExample.module>","<SwiftCLIExample.exe>"]
+default: "main"
+commands: 
+  "<Just.module>":
+    tool: swift-compiler
+    executable: "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    module-name: "Just"
+    module-output-path: "/Users/josh/iOS/swift-cli-alamofire/.build/debug/Just.swiftmodule"
+    inputs: []
+    outputs: ["<Just.module>","/Users/josh/iOS/swift-cli-alamofire/.build/debug/Just.build/Just.swift.o"]
+    import-paths: ["/Users/josh/iOS/swift-cli-alamofire/.build/debug"]
+    temps-path: "/Users/josh/iOS/swift-cli-alamofire/.build/debug/Just.build"
+    objects: ["/Users/josh/iOS/swift-cli-alamofire/.build/debug/Just.build/Just.swift.o"]
+    other-args: ["-j8","-D","SWIFT_PACKAGE","-Onone","-g","-enable-testing","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-target","x86_64-apple-macosx10.10","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk","-module-cache-path","/Users/josh/iOS/swift-cli-alamofire/.build/debug/ModuleCache"]
+    sources: ["/Users/josh/iOS/swift-cli-alamofire/Packages/Just-0.5.3/Sources/Just/Just.swift"]
+    is-library: true
+    enable-whole-module-optimization: false
+    num-threads: "8"
+
+  "<SwiftCLIExample.module>":
+    tool: swift-compiler
+    executable: "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    module-name: "SwiftCLIExample"
+    module-output-path: "/Users/josh/iOS/swift-cli-alamofire/.build/debug/SwiftCLIExample.swiftmodule"
+    inputs: ["<Just.module>"]
+    outputs: ["<SwiftCLIExample.module>","/Users/josh/iOS/swift-cli-alamofire/.build/debug/SwiftCLIExample.build/main.swift.o"]
+    import-paths: ["/Users/josh/iOS/swift-cli-alamofire/.build/debug"]
+    temps-path: "/Users/josh/iOS/swift-cli-alamofire/.build/debug/SwiftCLIExample.build"
+    objects: ["/Users/josh/iOS/swift-cli-alamofire/.build/debug/SwiftCLIExample.build/main.swift.o"]
+    other-args: ["-j8","-D","SWIFT_PACKAGE","-Onone","-g","-enable-testing","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-target","x86_64-apple-macosx10.10","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk","-module-cache-path","/Users/josh/iOS/swift-cli-alamofire/.build/debug/ModuleCache"]
+    sources: ["/Users/josh/iOS/swift-cli-alamofire/Sources/main.swift"]
+    is-library: false
+    enable-whole-module-optimization: false
+    num-threads: "8"
+
+  "<SwiftCLIExample.exe>":
+    tool: shell
+    description: "Linking ./.build/debug/SwiftCLIExample"
+    inputs: ["/Users/josh/iOS/swift-cli-alamofire/.build/debug/SwiftCLIExample.build/main.swift.o","/Users/josh/iOS/swift-cli-alamofire/.build/debug/Just.build/Just.swift.o"]
+    outputs: ["<SwiftCLIExample.exe>","/Users/josh/iOS/swift-cli-alamofire/.build/debug/SwiftCLIExample"]
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-target","x86_64-apple-macosx10.10","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk","-g","-L/Users/josh/iOS/swift-cli-alamofire/.build/debug","-o","/Users/josh/iOS/swift-cli-alamofire/.build/debug/SwiftCLIExample","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-emit-executable","/Users/josh/iOS/swift-cli-alamofire/.build/debug/SwiftCLIExample.build/main.swift.o","/Users/josh/iOS/swift-cli-alamofire/.build/debug/Just.build/Just.swift.o"]
+
